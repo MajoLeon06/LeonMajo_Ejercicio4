@@ -49,15 +49,148 @@ if (incidente >= 1 && incidente <= 4 && activo >= 1 && activo <= 4 && datos >= 1
                         Console.WriteLine("Respaldar información y descargar copia de seguridad previa");
                     }
                 }
-                else if (datos==1 && persistencia==2)
+                else if (datos == 1 && persistencia == 2)
                 {
                     Console.WriteLine("Severidad baja");
                 }
-                else if (datos==1 && persistencia==1)
+                else if (datos == 1 && persistencia == 1)
                 {
                     Console.WriteLine("Severidad media");
                 }
                 break;
             }
+        case 2:
+            {
+                if (datos != 1 && persistencia == 2)
+                {
+                    Console.WriteLine("Severidad alta");
+                    if (activo == 1)
+                    {
+                        Console.WriteLine("Limitar el acceso");
+                    }
+                    else if (activo == 2 || activo == 4)
+                    {
+                        Console.WriteLine("Alertar a los administradores y solicitar verificaciones");
+                    }
+                    else if (activo == 3)
+                    {
+                        Console.WriteLine("Validar a cada usuario");
+                    }
+                }
+                else if (datos != 1 && persistencia == 1)
+                {
+                    Console.WriteLine("Severidad crítica");
+                    if (activo == 1)
+                    {
+                        Console.WriteLine("Limitar acceso");
+                    }
+                    else if (activo == 2 || activo == 4)
+                    {
+                        Console.WriteLine("Solicitar doble verificación cada vez que se ingrese");
+                    }
+                    else if (activo == 3)
+                    {
+                        Console.WriteLine("Respaldar información y validar acceso");
+                    }
+                }
+                else if (datos == 1 && persistencia == 2)
+                {
+                    Console.WriteLine("Severidad baja");
+                }
+                else if (datos == 1 && persistencia == 1)
+                {
+                    Console.WriteLine("Severidad media");
+                }
+                break;
+            }
+        case 3:
+            {
+                if (datos != 1 && persistencia == 2)
+                {
+                    Console.WriteLine("Severidad alta");
+                    if (activo == 1)
+                    {
+                        Console.WriteLine("Verificar información de ingreso");
+                    }
+                    else if (activo == 2 || activo == 4)
+                    {
+                        Console.WriteLine("Autenticar credenciales");
+                    }
+                    else if (activo == 3)
+                    {
+                        Console.WriteLine("Implementar otras opciones de acceso");
+                    }
+                }
+                else if (datos != 1 && persistencia == 1)
+                {
+                    Console.WriteLine("Severidad crítica");
+                    if (activo == 1)
+                    {
+                        Console.WriteLine("Verificar info de ingreso");
+                    }
+                    else if (activo == 2 || activo == 4)
+                    {
+                        Console.WriteLine("Autenticar credenciales");
+                    }
+                    else if (activo == 3)
+                    {
+                        Console.WriteLine("Verificar información almacenada e implementar otras opciones de acceso");
+                    }
+                }
+                else if (datos == 1 && persistencia == 2)
+                {
+                    Console.WriteLine("Severidad baja");
+                }
+                else if (datos == 1 && persistencia == 1)
+                {
+                    Console.WriteLine("Severidad media");
+                }
+                break;
+            }
+        case 4:
+            {
+                if (datos != 1 && persistencia == 2)
+                {
+                    Console.WriteLine("Severidad alta");
+                    if (activo == 1)
+                    {
+                        Console.WriteLine("Bloquear dispositivo");
+                    }
+                    else if (activo == 2 || activo == 4)
+                    {
+                        Console.WriteLine("Enviar copia de seguridad al administrador");
+                    }
+                    else if (activo == 3)
+                    {
+                        Console.WriteLine("Bloquear acceso");
+                    }
+                }
+                else if (datos != 1 && persistencia == 1)
+                {
+                    Console.WriteLine("Severidad crítica");
+                    if (activo == 1)
+                    {
+                        Console.WriteLine("Bloquear dispositivo y enviar copia de seguridad a la nube");
+                    }
+                    else if (activo == 2 || activo == 4)
+                    {
+                        Console.WriteLine("Bloquear información y solicitar verificación");
+                    }
+                    else if (activo == 3)
+                    {
+                        Console.WriteLine("Subir información a la nube y bloquear acceso");
+                    }
+                }
+                else if (datos == 1 && persistencia == 2)
+                {
+                    Console.WriteLine("Severidad baja");
+                }
+                else if (datos == 1 && persistencia == 1)
+                {
+                    Console.WriteLine("Severidad media");
+                }
+                break;
+            }
+
     }
 }
