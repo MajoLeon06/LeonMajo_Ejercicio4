@@ -11,26 +11,53 @@ Console.WriteLine("¿Persistencia detectada? 1:Si 2:No");
 int persistencia = int.Parse(Console.ReadLine());
 Console.WriteLine("Número de usuarios afectados:");
 int users = int.Parse(Console.ReadLine());
-if (incidente>=1 && incidente<=4 && activo>=1 && activo<=4 && datos>=1 && datos<=4 && persistencia>=1 && persistencia<=2)
+if (incidente >= 1 && incidente <= 4 && activo >= 1 && activo <= 4 && datos >= 1 && datos <= 4 && persistencia >= 1 && persistencia <= 2)
 {
-    if (incidente==1 && activo==1 && datos==1 && persistencia==2)
+    switch (incidente)
     {
-        Console.WriteLine("Severidad baja");
-    }
-    else if (incidente == 1 && activo == 2 && datos == 1 && persistencia == 2)
-    {
-        Console.WriteLine("Severidad media");
-    }
-    else if (incidente == 1 && activo == 3 && datos == 1 && persistencia == 2)
-    {
-        Console.WriteLine("Severidad media");
-    }
-    else if (incidente == 1 && activo == 4 && datos == 1 && persistencia == 2)
-    {
-        Console.WriteLine("Severidad media");
-    }
-    else if (persistencia==1)
-    {
-        Console.WriteLine("Severidad alta");
+        case 1:
+            {
+                if (datos != 1 && persistencia == 2)
+                {
+                    Console.WriteLine("Severidad alta");
+                    if (activo == 1)
+                    {
+                        Console.WriteLine("Instalar antivirus");
+                    }
+                    else if (activo == 2 || activo == 4)
+                    {
+                        Console.WriteLine("Revisar vulnerabilidades");
+                    }
+                    else if (activo == 3)
+                    {
+                        Console.WriteLine("Respaldar información");
+                    }
+                }
+                else if (datos != 1 && persistencia == 1)
+                {
+                    Console.WriteLine("Severidad crítica");
+                    if (activo == 1)
+                    {
+                        Console.WriteLine("Instalar antivirus y recuperar información");
+                    }
+                    else if (activo == 2 || activo == 4)
+                    {
+                        Console.WriteLine("Revisar vulnerabilidades");
+                    }
+                    else if (activo == 3)
+                    {
+                        Console.WriteLine("Respaldar información y descargar copia de seguridad previa");
+                    }
+                }
+                else if (datos==1 && persistencia==2)
+                {
+                    Console.WriteLine("Severidad baja");
+                }
+                else if (datos==1 && persistencia==1)
+                {
+                    Console.WriteLine("Severidad media");
+                }
+                break;
+            }
     }
 }
