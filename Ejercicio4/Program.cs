@@ -191,6 +191,14 @@ if (incidente >= 1 && incidente <= 4 && activo >= 1 && activo <= 4 && datos >= 1
                 }
                 break;
             }
-
+        default:
+            {
+                Console.WriteLine("Ingrese nuevamente los datos");
+                break;
+            }
     }
+}
+else
+{
+    Console.WriteLine("Datos inválidos");
 }
